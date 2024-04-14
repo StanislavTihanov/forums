@@ -19,9 +19,9 @@ body {height: 100%;width: 100%;
      -moz-text-size-adjust: 100%;
      -webkit-text-size-adjust: 100%;
      height: 100%; font-weight: 400; 
-     font-family:'Mariupol', sans-serif; 
-     color: var(--color-black); 
-     background: var(--color-white);
+     font-family:'RFD', sans-serif; 
+     color: var(--color-white); 
+     background: var(--color-black);
      height: 100dvh;min-width: 
      320px;scroll-behavior: smooth;}
 input,
@@ -38,13 +38,33 @@ img {vertical-align: top;}
 h1,h2,h3,h4,h5,h6 {font-size: inherit;font-weight: 400;}
 
 @font-face {
-  font-family: 'Circe';
-  src:  url("../fonts/Circe-Light.woff");
+  font-family: 'RFD';
+  src:  url("../fonts/RFDewi-Regular.woff");
         font-weight: 400;
         font-display: swap;
         font-style: normal;
 }
-
+@font-face {
+  font-family: 'RFD';
+  src:  url("../fonts/RFDewi-Bold.woff");
+        font-weight: 700;
+        font-display: swap;
+        font-style: normal;
+}
+@font-face {
+  font-family: 'RFD';
+  src:  url("../fonts/RFDewi-Semibold.woff");
+        font-weight: 600;
+        font-display: swap;
+        font-style: normal;
+}
+@font-face {
+  font-family: 'RFD-Expanded';
+  src:  url("../fonts/RFDewiExpanded-Bold.woff");
+        font-weight: 700;
+        font-display: swap;
+        font-style: normal;
+}
 body.lock {
   overflow: hidden;
 }
@@ -74,9 +94,16 @@ body.lock {
   object-fit: cover;
 }
 .title h1{
-  font-size: clamp(50px, 10vw, 100px);
-  line-height: 100%;
-  color: var(--color-black);
+  font-size: clamp(40px, 5vw, 96px);
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase
+}
+.title h1 span {
+  font-size: clamp(14px, 0.8vw, 16px);
+  width: 190px;
+  text-transform: none;
 }
   /*
   1600px / 100px
@@ -86,11 +113,11 @@ body.lock {
 .subtitle h2{
   font-size: clamp(50px, 10vw, 100px);
   line-height: 100%;
-  color: #000000;
+  color: var(--color-white);
 }
 :root {
   --color-white: #FFFFFF;
-  --color-black: #000000;
+  --color-black: #0E0E0E;
 }
 /*---------------------------------------header----------------------*/
 .header__burger-wrapper {
@@ -100,7 +127,7 @@ body.lock {
   background-color: var(--color-blue);
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
 }
 .logo {
   z-index: 3;
@@ -109,37 +136,58 @@ body.lock {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
 }
 .menu__list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 10px 24px;
 }
-
-.button {
-  background-color: #1280E5;
-  width: 200px;
-  height: 20px;
+.menu__list-item a {
+  color: var(--color-white);
+  text-transform: uppercase;
 }
-
-.bg {
-  background-color: #B6D139;
+.header__menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header__language {
+  margin-left: 25px;
+}
+.menu__list-item--mod {
+  display: none;
+}
+.header__contacts {
+  display: none;
 }
 /*---------------------------------------header----------------------*/
 
 /*---------------------------------------homepage----------------------*/
 .main-section{
-  margin-top: 150px;
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
-.main-section__content span {
-  font-size: 100px;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px #B6D139;
+.main-section__content{
+  position: relative;
+  z-index: 3;
+}
+.main-section__body {
+  padding-top: 296px;
+  padding-bottom: 80px;
+  text-align: center;
 }
 /*---------------------------------------homepage----------------------*/
-
+.main-section__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 
 /*---------------------------------------footer----------------------------*/
 
@@ -623,6 +671,15 @@ form{
 
 
 @media (max-width: 770px) {
+  .header__menu-wrapper {
+    order: -1;
+  }
+  .menu__list-item--mod {
+    display: block;
+  }
+  .header__contacts {
+    display: block;
+  }
   .header__burger-wrapper {
     width: 36px;
     height: 36px;
@@ -684,16 +741,6 @@ form{
   }
   .menu._active{
     top: 0;
-  }
-  .menu::before {
-    position: fixed;
-    content: '';
-    width: 100%;
-    height: 94px;
-    top: 0;
-    left: 0;
-    background-color: #1280E5;
-    z-index: 2;
   }
   .menu__list-item:not(:last-child){
     margin-bottom: 30px;

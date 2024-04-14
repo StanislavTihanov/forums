@@ -18,28 +18,68 @@
     <header class="header lock-padding">
       <div class="header__content _container">
         <div class="header__body">
-          <a class="logo" href="#">
-            <img src="images/logo.svg" alt="logo">
-          </a>
           <nav class="menu" id="menu">
             <ul class="menu__list">
               <li class="menu__list-item">
-                <a class="menu__link" data-goto=".reviews" href="#">Главная</a>
+                <a href="#">Компания</a>
               </li>
               <li class="menu__list-item">
-                <a class="menu__link" data-goto=".rates" href="#">О нас</a>
+                <a href="#">Услуги</a>
               </li>
               <li class="menu__list-item">
-                <a class="menu__link" data-goto=".about" href="#">Каталог</a>
+                <a href="#">Мероприятия</a>
               </li>
-              <li class="menu__list-item">
-                <a class="menu__link" data-goto=".locations" href="#">Контакты</a>
+              <li class="menu__list-item menu__list-item--mod">
+                <a href="#">СПИКЕРЫ</a>
+              </li>
+              <li class="menu__list-item menu__list-item--mod">
+                <a href="#">КОМАНДА</a>
+              </li>
+              <li class="menu__list-item menu__list-item--mod">
+                <a href="#">Контакты</a>
               </li>
             </ul>
+            <div class="header__contacts">
+              <div class="header__contacts-block">
+                <p>Телефон</p>
+                <a href="tel:+74959882801">+7 (495) 988-28-01</a>
+              </div>
+              <div class="header__contacts-block">
+                <p>Email</p>
+                <a href="mailto:info@bd-event.ru">info@bd-event.ru</a>
+              </div>
+              <div class="header__contacts-block">
+                <a href="#">
+                  <img src="images/icons/vk.svg" alt="icon">
+                </a>
+                <a href="#">
+                  <img src="images/icons/youtube.svg" alt="icon">
+                </a>
+              </div>
+            </div>
           </nav>
-          <div class="header__box">
-            <a href="tel:+777777777776">+7 (777) 777 77-77</a>
-            <a href="mailto:stas89tihanov@gmail.com">stas89tihanov@gmail.com</a>
+          <a href="index.html" class="logo">
+            <img src="images/icons/logo.svg" alt="logo">
+          </a>
+          <div class="header__menu-wrapper">
+            <nav class="menu menu--mod">
+              <ul class="menu__list">
+                <li class="menu__list-item">
+                  <a href="#">СПИКЕРЫ</a>
+                </li>
+                <li class="menu__list-item">
+                  <a href="#">КОМАНДА</a>
+                </li>
+                <li class="menu__list-item">
+                  <a href="#">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="header__language">
+              <span>RU</span>
+              <span>|</span>
+              <span>EN</span>
+            </div>
           </div>
           <div class="header__burger-wrapper">
             <div class="header__burger" id="hamb">
@@ -49,9 +89,6 @@
             </div>
           </div>
         </div>
-        <div class="header__bottom">
-
-        </div>
       </div>
     </header>
 
@@ -59,15 +96,28 @@
 
       <section class="main-section">
         <div class="main-section__content _container">
-          <picture>
-            <source media="(max-width: 360px)" srcset="images/img-bg-360.webp">
-            <source media="(min-width: 1920px)" srcset="images/img-background@2x.webp">
-            <img src="images/img-background.webp" alt="image background" loading="lazy">
-          </picture>
-          <div class="counter">
-            <div class="next"></div>
-            <div class="count"></div>
+          <div class="main-section__body">
+            <div class="title">
+              <h1>Форумы<span>Под ключ и в формате частичной реализации</span>Конференции ВЫСТАВКИ</h1>
+            </div>
+            <div class="main-section__text">
+              <p>В составе Группы компаний “Михайлов и Партнёры”</p>
+            </div>
+            <div class="main-section__link">
+              <a href="#">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="58" height="58" rx="29" stroke="white" stroke-opacity="0.24" style="stroke:white;stroke-opacity:0.24;" stroke-width="2" />
+                  <path d="M29.252 38.748C29.6651 39.1611 30.3349 39.1611 30.748 38.748L37.4801 32.0159C37.8933 31.6028 37.8933 30.933 37.4801 30.5199C37.067 30.1067 36.3972 30.1067 35.9841 30.5199L30 36.504L24.0159 30.5199C23.6028 30.1067 22.933 30.1067 22.5199 30.5199C22.1067 30.933 22.1067 31.6028 22.5199 32.0159L29.252 38.748ZM28.9421 22L28.9421 38L31.0579 38L31.0579 22L28.9421 22Z" fill="white" style="fill:white;fill-opacity:1;" />
+                </svg>
+              </a>
+            </div>
           </div>
+        </div>
+        <div class="main-section__bg _ibg">
+          <picture>
+            <source media="(min-width: 1920px)" srcset="images/hero@2x.webp">
+            <img src="images/hero.webp" alt="image background" loading="lazy">
+          </picture>
         </div>
       </section>
     </main>
@@ -76,7 +126,7 @@
       <div class="footer__content _container">
         <div class="footer__logo">
           <a class="logo" href="index.html">
-            <img src="images/logo.svg" alt="logo">
+            <img src="images/icons/logo.svg" alt="logo">
           </a>
         </div>
         <div class="footer__body">
