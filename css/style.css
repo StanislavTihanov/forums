@@ -75,9 +75,9 @@ body.lock {
   overflow: hidden;
 }
 ._container{
-  max-width: 1920px;
+  max-width: 1392px;
   margin: 0 auto;
-  padding: 0 264px;
+  padding: 0 16px;
 }
 .main {
   flex: 1 1 auto;
@@ -131,6 +131,7 @@ body.lock {
   font-size: clamp(28px, 4.6vw, 64px);
   line-height: 120%;
   font-weight: 700;
+  text-transform: uppercase;
 }
 :root {
   --color-white: #FFFFFF;
@@ -216,7 +217,8 @@ body.lock {
 /*---------------------------------------header----------------------*/
 
 /*--------------------------------------main-section----------------------*/
-.main-section{
+.main-section ,
+.customers-clients{
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
@@ -261,7 +263,7 @@ body.lock {
 
 /*-------------------------------------services---------------------*/
 .services {
-  margin-bottom: 112px;
+  margin-bottom: 135px;
   position: relative;
 }
 .services__content {
@@ -322,11 +324,11 @@ body.lock {
   margin-right: -400px;
   padding-bottom: 78px;
 }
-.services__slider .swiper-pagination {
+.swiper-pagination {
   bottom: 0;
   left: -11%;
 }
-.services__slider .swiper-pagination-bullet {
+.swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   background-color: var(--color-white);
@@ -335,37 +337,101 @@ body.lock {
   border: 1px solid var(--color-white);
   transition: all 0.3s;
 }
-.services__slider .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   width: 35px;
   border-radius: 12px;
 }
-.services__content .swiper-button-prev::after, 
-.services__content .swiper-button-next::after {
+.swiper-button-prev::after, 
+.swiper-button-next::after {
   display: none;
 }
-.services__content .swiper-button-prev, 
-.services__content .swiper-button-next {
+.swiper-button-prev, 
+.swiper-button-next {
   color: var(--color-white);
   font-size: 20px;
   border-radius: 5px solid var(--color-white);
   width: 50px;
   top: 99%;
 }
-.services__content .swiper-button-prev {
+.swiper-button-prev {
   left: 80%;
 }
-.services__content .swiper-button-next {
+.swiper-button-next {
   right: 270px;
 }
 /*------------------------------------services----------------------*/
 
 /*------------------------------------events----------------------*/
-
+.events {
+  margin-bottom: 48px;
+}
+.events .subtitle {
+  margin-bottom: 30px;
+}
+.events__blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.block {
+  position: relative;
+  border-radius: 24px;
+}
+.block__image img {
+  width: 100%;
+  border-radius: 24px;
+}
+.block__info {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+.block__info h3 {
+  font-size: clamp(18px, 1.6vw, 24px);
+  text-transform: uppercase;
+  max-width: 350px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+}
+.button {
+  text-align: center;
+}
+.button a {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 135%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 32px;
+  padding: 24px 32px;
+}
 /*------------------------------------events----------------------*/
 
+/*------------------------------------customers-clients----------------------*/
+.customers-clients {
+  margin-bottom: 112px;
+}
+.customers-clients__content {
+}
+.customers-clients__slider {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+.customers-clients__block {
+  display: grid;
+  grid-template-columns: repeat(8, 245px);
+  gap: 24px;
+}
+.customers-clients__link {
+}
 
-
-
+/*------------------------------------customers-clients----------------------*/
 
 
 
@@ -845,44 +911,40 @@ form{
 }
 /*---------------------------------------media-hover----------------------------*/
 
-
-@media (max-width: 1850px) {
-  ._container{
-    padding: 0 120px;
-  }
-}
-
 @media (max-width: 1440px) {
+  ._container{
+    max-width: 1200px;
+  }
   .services__slider {
     margin-right: -600px;
   }
   .main-section__content{
     margin-bottom: 133px;
   }
-  .services__content .swiper-button-prev {
+.swiper-button-prev {
     left: 83%;
   }
-  .services__content .swiper-button-next {
+.swiper-button-next {
     right: 125px;
   }
-  .services__slider .swiper-pagination {
+.swiper-pagination {
     left: -17%;
   }
 }
 
 
 @media (max-width: 950px) {
-  .services__content .swiper-button-prev {
+.swiper-button-prev {
     left: 75%;
   }
-  .services__content .swiper-button-next {
+.swiper-button-next {
     right: 80px;
   }
-  .services__slider .swiper-pagination {
+.swiper-pagination {
     left: -20%;
   }
   ._container{
-    padding: 0 24px;
+    max-width: 756px;
   }
 }
 
@@ -1006,13 +1068,13 @@ form{
   .services__slider {
     margin-right: -100px;
   }
-  .services__content .swiper-button-prev {
+.swiper-button-prev {
     left: 82%;
   }
-  .services__content .swiper-button-next {
+.swiper-button-next {
     right: 24px;
   }
-  .services__slider .swiper-pagination {
+.swiper-pagination {
     left: -10%;
   }
   .main-section__content{
@@ -1023,6 +1085,13 @@ form{
   }
   .subtitle {
     margin-bottom: 60px;
+  }
+  .events__blocks {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
+  }
+  .services {
+    margin-bottom: 110px;
   }
 }
 
@@ -1073,16 +1142,16 @@ form{
   .header__content {
     padding: 0px 16px;
   }
-  .services__slider .swiper-pagination {
+.swiper-pagination {
     display: none;
   }
   ._container{
     padding: 0 16px;
   }
-  .services__content .swiper-button-next {
+ .swiper-button-next {
     right: 16px;
   }
-  .services__content .swiper-button-prev {
+ .swiper-button-prev {
     left: 70%;
   }
   .services__slider {
@@ -1100,14 +1169,12 @@ form{
   .services__block {
     padding: 20px;
   }
-  .services__content .swiper-button-prev {
+ .swiper-button-prev {
     left: 66%;
   }
   .services__slider {
     margin-right: 0px;
     padding-bottom: 50px;
-  }
-  .services__slider {
     margin-right: -235px;
   }
   .main-section__content {
@@ -1118,6 +1185,13 @@ form{
   }
   .services__block {
     height: 450px;
+  }
+  .block__info {
+    left: 20px;
+    bottom: 20px;
+  }
+  .events__blocks {
+    gap: 20px;
   }
 }
 /*---------------------------------------media----------------------------*/
