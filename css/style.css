@@ -324,10 +324,6 @@ body.lock {
   margin-right: -400px;
   padding-bottom: 78px;
 }
-.swiper-pagination {
-  bottom: 0;
-  left: -11%;
-}
 .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
@@ -353,11 +349,15 @@ body.lock {
   width: 50px;
   top: 99%;
 }
-.swiper-button-prev {
-  left: 80%;
+.services__content .swiper-button-prev {
+  left: 90%;
 }
-.swiper-button-next {
-  right: 270px;
+.services__content .swiper-button-next {
+  right: 10px;
+}
+.services__content .swiper-pagination {
+  left: -11%;
+  margin-bottom: -15px;
 }
 /*------------------------------------services----------------------*/
 
@@ -416,28 +416,108 @@ body.lock {
 .customers-clients {
   margin-bottom: 112px;
 }
-.customers-clients__content {
-}
 .customers-clients__slider {
   position: relative;
   overflow: hidden;
   padding-bottom: 50px;
+  margin-left: -200px;
 }
 .customers-clients__block {
   display: grid;
   grid-template-columns: repeat(8, 245px);
   gap: 24px;
+  margin-bottom: 24px;
 }
-.customers-clients__link {
+.customers-clients__block--mod1 {
+  margin-left: 30px;
 }
-
+.customers-clients__block--mod2 {
+  margin-left: 100px;
+}
+.customers-clients__content .swiper-button-prev {
+  left: 81%;
+}
+.customers-clients__content .swiper-button-next {
+  right: 13%;
+}
+.customers-clients__content .swiper-pagination {
+   left: 55%;
+   transform: translate(-50%, -50%);
+   margin-bottom: -15px;
+}
+.customers-clients__content .swiper-slide a:first-child {
+  margin-bottom: 24px;
+  display: block;
+}
+.customers-clients__content .swiper-slide img {
+  width: 100%;
+  margin-right: 30px;
+}
 /*------------------------------------customers-clients----------------------*/
 
 
 
 
 /*---------------------------------------footer----------------------------*/
-
+.footer {
+  margin-bottom: 60px;
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 64px;
+}
+.footer__block--mod {
+  flex-basis: 350px;
+}
+.footer__item {
+  margin-bottom: 15px;
+}
+.footer__item a {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 135%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.footer__block-info:not(:last-child) {
+  margin-bottom: 24px;
+}
+.footer__block-info p,
+.footer__block-links a {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 145%;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 8px;
+}
+.footer__block-info address,
+.footer__block-info a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 145%;
+}
+.footer__block-info a {
+  color: var(--color-white);
+}
+.footer__block-social {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.footer__block-links {
+  max-width: 350px;
+}
+.footer__block-links a {
+  margin-bottom: 10px;
+  display: block;
+}
 
 /*---------------------------------------footer----------------------------*/
 
@@ -911,6 +991,12 @@ form{
 }
 /*---------------------------------------media-hover----------------------------*/
 
+@media (max-width: 1850px) {
+
+}
+
+
+
 @media (max-width: 1440px) {
   ._container{
     max-width: 1200px;
@@ -921,30 +1007,51 @@ form{
   .main-section__content{
     margin-bottom: 133px;
   }
-.swiper-button-prev {
-    left: 83%;
+  .services__content .swiper-button-prev {
+    left: 80%;
   }
-.swiper-button-next {
-    right: 125px;
+  .services__content .swiper-button-next {
+    right: 0px;
   }
-.swiper-pagination {
-    left: -17%;
+  .services__content .swiper-pagination {
+    left: -20%;
+  }
+  .customers-clients__block--mod1 {
+    margin-left: -50px;
+  }
+  .customers-clients__block--mod2 {
+    margin-left: -10px;
+  }
+  .customers-clients__content .swiper-button-prev {
+    left: 81%;
+  }
+  .customers-clients__content .swiper-button-next {
+    right: 10%;
+  }
+  .customers-clients__content .swiper-pagination {
+     left: 60%;
+     transform: translate(-50%, -50%);
   }
 }
 
+@media (max-width: 1200px) {
+
+}
 
 @media (max-width: 950px) {
-.swiper-button-prev {
-    left: 75%;
-  }
-.swiper-button-next {
-    right: 80px;
-  }
-.swiper-pagination {
-    left: -20%;
-  }
   ._container{
     max-width: 756px;
+  }
+  .customers-clients__content .swiper-button-prev {
+    left: 78%;
+  }
+  .customers-clients__content .swiper-button-next {
+    right: 10%;
+  }
+  .customers-clients__content .swiper-pagination {
+     left: 60%;
+     transform: translate(-50%, -50%);
+     margin-bottom: -15px;
   }
 }
 
@@ -1068,13 +1175,13 @@ form{
   .services__slider {
     margin-right: -100px;
   }
-.swiper-button-prev {
+  .swiper-button-prev {
     left: 82%;
   }
-.swiper-button-next {
+  .swiper-button-next {
     right: 24px;
   }
-.swiper-pagination {
+  .swiper-pagination {
     left: -10%;
   }
   .main-section__content{
@@ -1092,6 +1199,23 @@ form{
   }
   .services {
     margin-bottom: 110px;
+  }
+  .footer__block--mod2 {
+    margin: 0 auto;
+    padding-right: 30px;
+  }
+  .services__content .swiper-button-prev {
+    left: 80%;
+  }
+  .services__content .swiper-button-next {
+    right: 16px;
+  }
+  .services__content .swiper-pagination {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .customers-clients__content .swiper-button-next {
+    right: 16px;
   }
 }
 
@@ -1157,6 +1281,9 @@ form{
   .services__slider {
     margin-right: -300px;
   }
+  .customers-clients__content .swiper-button-prev {
+    left: 70%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1169,8 +1296,8 @@ form{
   .services__block {
     padding: 20px;
   }
- .swiper-button-prev {
-    left: 66%;
+  .services__content .swiper-button-prev {
+    left: 63%;
   }
   .services__slider {
     margin-right: 0px;
@@ -1192,6 +1319,18 @@ form{
   }
   .events__blocks {
     gap: 20px;
+  }
+  .footer__content {
+    display: block;
+  }
+  .footer__block {
+    margin-bottom: 32px;
+  }
+  .footer {
+    margin-bottom: 8px;
+  }
+  .customers-clients__content .swiper-button-prev {
+    left: 63%;
   }
 }
 /*---------------------------------------media----------------------------*/

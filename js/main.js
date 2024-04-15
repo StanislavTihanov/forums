@@ -328,8 +328,8 @@ if (menuLinks.length > 0) {
 //------------------------------------------------------------------------Слайдер
 
 const servicesSlider = new Swiper('.services__slider', {
-  slidesPerView: 4,
-  spaceBetween: 30,
+  direction: 'horizontal',
+  loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -347,7 +347,7 @@ const servicesSlider = new Swiper('.services__slider', {
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 30
     },
     // when window width is >= 640px
@@ -360,8 +360,8 @@ const servicesSlider = new Swiper('.services__slider', {
 
 
 const customersClientsSlider = new Swiper('.customers-clients__slider', {
-  slidesPerView: 4,
-  spaceBetween: 30,
+  direction: 'horizontal',
+  loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -370,23 +370,22 @@ const customersClientsSlider = new Swiper('.customers-clients__slider', {
     el: '.swiper-pagination',
     clickable: true,
   },
+
   speed: 2000,
   breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: 2,
-      spaceBetween: 20
+      slidesPerView: 4,
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    770: {
       slidesPerView: 4,
-      spaceBetween: 40
-    }
+      spaceBetween: 16
+    },
+    992: {
+      slidesPerView: 8,
+      spaceBetween: 24
+    },
   }
 });
 
