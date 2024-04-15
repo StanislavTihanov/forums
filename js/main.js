@@ -33,6 +33,8 @@ document.addEventListener ('click', (e) => {
 //------------------------------------------------------------------------закрытие меню при клике вне его
 
 
+
+
 //------------------------------------------------------------------------Прокрутка при клике
 let buttons = document.querySelectorAll('.menu__link');
 
@@ -322,25 +324,39 @@ if (menuLinks.length > 0) {
 
 
 //------------------------------------------------------------------------Слайдер
-//const swiper = new Swiper('.swiper', {
-//  direction: 'horizontal',
-//  loop: true,
-//  pagination: {
-//    el: '.swiper-pagination',
-//    clickable: true,
-//  },
-//  navigation: {
-//    nextEl: '.swiper-button-next',
-//    prevEl: '.swiper-button-prev',
-//  },
-//  autoplay: {
-//    delay: 2000,
-//  },
-//  speed: 2000,
-//});
+
 //------------------------------------------------------------------------Слайдер
 
-
+const servicesSlider = new Swiper('.services__slider', {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  speed: 2000,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    770: {
+      slidesPerView: 4,
+      spaceBetween: 40
+    }
+  }
+});
 //------------------------------------------------------------------------popup
 //const popupLinks = document.querySelectorAll('.popup-link');
 //const body = document.querySelector('body');
