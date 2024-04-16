@@ -11,7 +11,15 @@
 //}
 //------------------------------------------------------------------------preloader
 
-
+//------------------------------------------------------------------------появление бекграунда у шапки
+window.addEventListener('scroll', () => {
+  if(pageYOffset > 50) {
+    document.querySelector('.header').classList.add('bg_active')
+  } else {
+    document.querySelector('.header').classList.remove('bg_active')
+  }
+})
+//------------------------------------------------------------------------появление бекграунда у шапки
 
 //------------------------------------------------------------------------Меню-Бургер
 const burgerMenu = document.querySelector('.header__burger-wrapper');
@@ -326,67 +334,51 @@ if (menuLinks.length > 0) {
 
 
 //------------------------------------------------------------------------Слайдер
-
-const servicesSlider = new Swiper('.services__slider', {
-  direction: 'horizontal',
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+$('.services__slider').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  dots: true,
   speed: 2000,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 20
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
     },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 3,
-      spaceBetween: 30
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
     },
-    // when window width is >= 640px
-    770: {
-      slidesPerView: 4,
-      spaceBetween: 40
+    {
+      breakpoint: 401,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false
+      }
     }
-  }
+  ]
 });
 
-
-const customersClientsSlider = new Swiper('.customers-clients__slider', {
-  direction: 'horizontal',
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
+$('.customers-clients__slider').slick({
+  infinite: true,
+  slidesToShow: 8,
+  slidesToScroll: 1,
+  dots: true,
   speed: 2000,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 4,
+  responsive: [
+    {
+      breakpoint: 401,
+      settings: {
+        slidesToShow: 3,
+        dots: false
+      }
     },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 4,
-      spaceBetween: 16
-    },
-    992: {
-      slidesPerView: 8,
-      spaceBetween: 24
-    },
-  }
+  ]
 });
 
 
