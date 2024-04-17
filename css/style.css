@@ -810,6 +810,12 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   line-height: 150%;
   letter-spacing: 0.01em;
 }
+.person__card-email {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 145%;
+  color: rgba(255, 255, 255, 0.68);
+}
 .person__card-image img {
   width: 100%;
 }
