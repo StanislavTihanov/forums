@@ -783,10 +783,37 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
 }
 
 /*--------------------------------------events-page----------------------------*/
+/*--------------------------------------speakers----------------------------*/
+.speakers__body {
+  margin-bottom: 112px;
+}
+.person__card {
+  position: relative;
+  max-width: 434px;
+}
+.person__card-content {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  right: 32px;
+}
+.person__card-name {
+  font-weight: 700;
+  font-size: clamp(18px, 1.4vw, 20px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.person__card-post {
+  font-size: clamp(14px, 0.8vw, 16px);
+  line-height: 150%;
+  letter-spacing: 0.01em;
+}
+.person__card-image img {
+  width: 100%;
+}
 
-
-
-
+/*--------------------------------------speakers----------------------------*/
 
 
 /*---------------------------------------media----------------------------*/
@@ -1132,6 +1159,11 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   }
   .blockquote {
     margin-bottom: 70px;
+  }
+  .person__card-content {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
   }
 }
 /*---------------------------------------media----------------------------*/
