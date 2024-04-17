@@ -790,6 +790,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
 .person__card {
   position: relative;
   max-width: 434px;
+  margin-bottom: 40px;
 }
 .person__card-content {
   position: absolute;
@@ -812,7 +813,13 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
 .person__card-image img {
   width: 100%;
 }
-
+.speakers__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px 0px;
+  flex-wrap: wrap;
+}
 /*--------------------------------------speakers----------------------------*/
 
 
