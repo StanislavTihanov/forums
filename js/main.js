@@ -29,7 +29,22 @@ document.addEventListener ('click', (e) => {
 })
 //------------------------------------------------------------------------закрытие меню при клике вне его
 
-
+const elements = document.querySelectorAll('.secondary-button');
+const sideBlocks = document.querySelector('.side-block');
+elements.forEach(function(element) {
+  element.addEventListener('click', function() {
+    sideBlocks.classList.add('side-open');
+     const openSide = () => {
+        
+    }
+  });
+ });
+ const elementsClose = document.querySelectorAll('.side-block-close');
+ elementsClose.forEach(function(el) {
+   el.addEventListener('click', function() {
+     sideBlocks.classList.remove('side-open');
+   });
+  });
 //------------------------------------------------------------------------Слайдер
 $('.services__slider').slick({
   infinite: true,
