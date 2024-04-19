@@ -148,7 +148,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   padding: 0px 40px;
 }
 .logo {
-  z-index: 3;
+  z-index: 999;
   margin-left: 55px;
 }
 .header__body {
@@ -184,7 +184,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   line-height: 135%;
   letter-spacing: 0.04em;
   position: relative;
-  z-index: 3;
+  z-index: 999;
 }
 .header__language span {
   cursor: pointer;
@@ -741,6 +741,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   font-weight: 600;
   line-height: 145%;
   color: rgba(255, 255, 255, 0.68);
+  padding-right: 30px;
 }
 .side-block {
   backdrop-filter: blur(10px);
@@ -757,8 +758,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   position: absolute;
   left: 40px;
   bottom: 40px;
-  right: 20px;
-  max-width: 388px;
+  max-width: 100%;
   text-align: start;
   z-index: 3;
   height: 100%;
@@ -774,8 +774,8 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
 .close {
   position: absolute;
   font-size: 80px;
-  top: 40px;
-  right: -120px;
+  top: 35px;
+  right: -20px;
   transform: rotate(45deg);
   font-weight: 400;
   cursor: pointer;
@@ -786,6 +786,9 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
 .side-block.side-open {
   width: 41%;
 }
+.side-block.side-open .close {
+  right: 20px;
+}
 .close-button {
   border: 1px solid var(--color-white);
   border-radius: 32px;
@@ -793,19 +796,17 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   display: inline-block;
   cursor: pointer;
 }
-.side-block2,
-.side-block5 {
+.side-block--mod {
   overflow: hidden;
   border-radius: 24px;
   background: #000000f0;
 }
-.side-block2 .close,
-.side-block5 .close {
+.side-block--mod .close {
   right: -220px;
 }
-.side-block2.side-open,
-.side-block5.side-open {
+.side-block--mod.side-open{
   width: 100%;
+  border-radius: 24px;
  }
 /*--------------------------------------events-page----------------------------*/
 /*--------------------------------------speakers----------------------------*/
@@ -933,6 +934,8 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   display: flex;
   justify-content: space-between;
   gap: 48px 10px;
+  position: relative;
+  z-index: 3;
 }
 .contacts__blocks {
   display: flex;
@@ -1079,7 +1082,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
     flex: 0 0 auto;
     position: relative;
     display: block;
-    z-index: 4;
+    z-index: 999;
   } 
   .header__burger{
     z-index: 2;
@@ -1130,7 +1133,7 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
     padding: 196px 30px 30px 30px; 
     transition: All 0.5s ease 0s;
     overflow: auto;
-    z-index: 2;
+    z-index: 999;
   }
   .menu._active{
     top: 0;
@@ -1153,13 +1156,12 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   .speakers__blocks {
     gap: 40px 37px;
   }
-  .close {
-    right: 0px;
-    top: 20px;
-  }
   .side-block2 .close,
   .side-block5 .close {
    right: 0px;
+} 
+.side-block.side-open {
+  width: 100%;
 }
 }
 
@@ -1272,18 +1274,16 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
     width: 100%;
   }
   .side-block__content-wrapper {
-    max-width: 100%;
-  }
-  .side-block__content-wrapper {
     left: 20px;
     bottom: 20px;
-  }
-  .close {
-    right: -20px;
-    top: 20px;
+    width: 100%;
   }
   .side-block {
     background: #000000f0;
+  }
+  .side-block.side-open .close {
+    top: 20px;
+    right: 40px;
   }
 }
 
@@ -1393,9 +1393,9 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
   .side-block__text {
     margin-bottom: 15px;
   }
-  .side-block.side-open .close {
-    right: 0;
-    top: 20px;
+  .side-block__text--mod {
+    font-size: 11px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1480,5 +1480,12 @@ h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: inherit;}
     top: 105%;
     left: -50px;
    }
+   .side-block.side-open .close {
+    font-size: 50px;
+    right: 30px;
+   }
+   .side-block__text{
+    font-size: 9px;
+  }
 }
 /*---------------------------------------media----------------------------*/

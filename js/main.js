@@ -2,7 +2,7 @@
 
 //------------------------------------------------------------------------появление бекграунда у шапки
 window.addEventListener('scroll', () => {
-  if(pageYOffset > 50) {
+  if(scrollY > 50) {
     document.querySelector('.header').classList.add('bg_active')
   } else {
     document.querySelector('.header').classList.remove('bg_active')
@@ -29,7 +29,7 @@ document.addEventListener ('click', (e) => {
 })
 //------------------------------------------------------------------------закрытие меню при клике вне его
 
-//------------------------------------------------------------------------Слайдер
+//------------------------------------------------------------------------Слайдеры
 $('.services__slider').slick({
   infinite: true,
   slidesToShow: 4,
@@ -76,42 +76,27 @@ $('.customers-clients__slider').slick({
     },
   ]
 });
+//------------------------------------------------------------------------Слайдеры
 
-const secondaryButton1 = document.querySelector('.secondary-button1');
-const secondaryButton2 = document.querySelector('.secondary-button2');
-const secondaryButton3 = document.querySelector('.secondary-button3');
-const secondaryButton4 = document.querySelector('.secondary-button4');
-const secondaryButton5 = document.querySelector('.secondary-button5');
+//------------------------------------------------------------------------код для открытия блоков на странице мероприятия
+//---------достали все нужные элементы
+const secondaryButtons = document.querySelectorAll('.secondary-button');
 const sideBlocks = document.querySelectorAll('.side-block');
-const sideBlock1 = document.querySelector('.side-block1');
-const sideBlock2 = document.querySelector('.side-block2');
-const sideBlock3 = document.querySelector('.side-block3');
-const sideBlock4 = document.querySelector('.side-block4');
-const sideBlock5 = document.querySelector('.side-block5');
+const elementsClose = document.querySelectorAll('.side-block-close');
 
-secondaryButton1.addEventListener('click', () => {
-  sideBlock1.classList.add('side-open');
+//--------------------------этот код открывает блок
+secondaryButtons.forEach((button, index) => {
+ button.addEventListener('click', () => {
+    sideBlocks[index].classList.add('side-open');
+ });
 });
-secondaryButton2.addEventListener('click', () => {
-  sideBlock2.classList.add('side-open');
+//--------------------------этот код закрывает блок 
+document.addEventListener('click', (event) => {
+ if (event.target.matches('.side-block-close')) {
+    const sideBlock = event.target.closest('.side-block');
+    if (sideBlock) {
+      sideBlock.classList.remove('side-open');
+    }
+ }
 });
-secondaryButton3.addEventListener('click', () => {
-  sideBlock3.classList.add('side-open');
-});
-secondaryButton4.addEventListener('click', () => {
-  sideBlock4.classList.add('side-open');
-});
-secondaryButton5.addEventListener('click', () => {
-  sideBlock5.classList.add('side-open');
-});
-//------------------------------------------------------------------------функция закрывает side-block
-sideBlocks.forEach(function (sideBlocks) {
-
-   const elementsClose = document.querySelectorAll('.side-block-close');
-   elementsClose.forEach(function(el) {
-     el.addEventListener('click', function() {
-       sideBlocks.classList.remove('side-open');
-     });
-    });
-});
-//------------------------------------------------------------------------функция закрывает side-block
+//------------------------------------------------------------------------код для открытия блоков на странице мероприятия
