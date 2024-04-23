@@ -30,51 +30,36 @@ document.addEventListener ('click', (e) => {
 //------------------------------------------------------------------------закрытие меню при клике вне его
 
 //------------------------------------------------------------------------Слайдеры
-$('.services__slider').slick({
-  infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  dots: true,
+const servicesSlider = new Swiper('.services__slider', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 4,
+  spaceBetween: 20,
   speed: 500,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 400,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false
-      }
-    }
-  ]
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
-$('.customers-clients__slider').slick({
-  infinite: true,
-  slidesToShow: 8,
-  slidesToScroll: 1,
-  dots: true,
+const customersClientsSlider = new Swiper('.customers-clients__slider', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 2,
+  spaceBetween: 20,
   speed: 500,
-  responsive: [
-    {
-      breakpoint: 401,
-      settings: {
-        slidesToShow: 3,
-        dots: false
-      }
-    },
-  ]
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 //------------------------------------------------------------------------Слайдеры
 
