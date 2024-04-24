@@ -49,7 +49,6 @@ const servicesSlider = new Swiper('.services__slider', {
 const customersClientsSlider = new Swiper('.customers-clients__slider', {
   direction: 'horizontal',
   loop: true,
-  slidesPerView: 2,
   spaceBetween: 20,
   speed: 500,
   pagination: {
@@ -60,6 +59,14 @@ const customersClientsSlider = new Swiper('.customers-clients__slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    980: {
+      slidesPerView: 2,
+    },
+  }
 });
 //------------------------------------------------------------------------Слайдеры
 
